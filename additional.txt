@@ -1,0 +1,87 @@
+// Hello world! Cplayground is an online sandbox that makes it easy to try out
+// code.
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//led number is index + 1
+const char *districts[] = {
+  "Закарпатська_область",
+  "Львівська_область",
+  "Волинська_область",
+  "Рівненська_область",
+  "Тернопільська_область",
+  "Івано-Франківська_область",
+  "Чернівецька_область",
+  "Хмельницька_область",
+  "Житомирська_область",
+  "Вінницька_область",
+  "Одеська_область",
+  "Кіровоградська_область",
+  "Черкаська_область",
+  "Київська_область",
+  "Чернігівська_область",
+  "Сумська_область",
+  "Полтавська_область",
+  "Харківська_область",
+  "Луганська_область",
+  "Донецька_область",
+  "Запорізька_область",
+  "Дніпропетровська_область",
+  "Миколаївська_область",
+  "Херсонська_область",
+  "АР_Крим",
+};
+
+//[isAlarm on now, last readings on if alarm is on]
+int districtData[25][2]{
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {0, 0},
+    {1, 0},
+    {0, 0},
+    {0, 0},
+};
+
+char* test_value = "Миколаївська_область";
+
+int find_index(char* target, const char* array[], int array_length) {
+    for (int i = 0; i < array_length; i++) {
+        if (strcmp(target, array[i]) == 0) {
+            return i;  // return the index of the match
+        }
+    }
+    return -1;  // return -1 if not found
+}
+
+int main() {
+    // int array_length = ;
+    int index = find_index(test_value, districts, 25);
+    
+    if (index == -1) {
+        printf("Target not found in array\n");
+    } else {
+        printf("District data of target is %d\n", districtData[index][0]);
+    }
+    return 0;
+}
