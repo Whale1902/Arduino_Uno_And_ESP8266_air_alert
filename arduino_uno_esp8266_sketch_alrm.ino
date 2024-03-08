@@ -2,7 +2,7 @@
 #include <WiFiClientSecure.h>
 #include <ArduinoJson.h>
 
-char ssid[] = "RustyToha2.4";   // network SSID (name)
+char ssid[] = "network SSID (name)";   // network SSID (name)
 char password[] = "m6v8aze8l";  // network key
 
 WiFiClientSecure client;
